@@ -35,6 +35,7 @@ Shapes */
 //Galaxy
 
 const parameters = {
+    size: 0.01,
     stars: 50000,
     radius: 5,
     branches: 3,
@@ -62,7 +63,7 @@ const generateGalaxy = () => {
     //generate new galaxy
     galaxyGeometry = new THREE.BufferGeometry()
     galaxyMaterial = new THREE.PointsMaterial({
-        size: 0.01,
+        size: parameters.size,
         sizeAttenuation: true,
         depthWrite: false,
         blending: THREE.AdditiveBlending,
@@ -116,6 +117,7 @@ const galaxyControls = gui.addFolder('Galaxy Controls')
 galaxyControls.open()
 gui.width = 400
 
+galaxyControls.add(parameters, 'size', 0, 0.03, 0.0001).onFinishChange(generateGalaxy)
 galaxyControls.add(parameters, 'stars', 1, 100000, 1).onFinishChange(generateGalaxy)
 galaxyControls.add(parameters, 'radius', 1, 10, 1).onFinishChange(generateGalaxy)
 galaxyControls.add(parameters, 'branches', 2, 8, 1).onFinishChange(generateGalaxy)
