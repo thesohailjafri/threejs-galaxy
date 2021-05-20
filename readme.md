@@ -1,17 +1,7 @@
-# Three.js Journey
+# 18th of Three.js Journey
 
-## Setup
-Download [Node.js](https://nodejs.org/en/download/).
-Run this followed commands:
+##Screenshot
+![image](https://user-images.githubusercontent.com/66732877/119059762-93ebef00-b9ee-11eb-84fa-0c6ed70936e8.png)
 
-``` bash
-# Install dependencies (only the first time)
-npm install
 
-# Run the local server at localhost:8080
-npm run dev
-
-# Build for production in the dist/ directory
-npm run build
-```
 "# threejs-galaxy" 
