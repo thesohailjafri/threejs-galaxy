@@ -73,6 +73,9 @@ let reset = {
 let printmyname = {
     createdBySohail: function () {
         console.log('D\'Galaxy Generator By Sohail : https://github.com/thesohailjafri/threejs-galaxy')
+        window.location.replace('https://github.com/thesohailjafri/threejs-galaxy')
+        window.open('https://www.instagram.com/thesohailjafri/', '_blank')
+
     }
 }
 
