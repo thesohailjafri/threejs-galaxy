@@ -33,7 +33,6 @@ scene.add(camera)
 Shapes */
 
 //Galaxy
-
 const parameters = {
     size: 0.01,
     stars: 50000,
@@ -42,10 +41,36 @@ const parameters = {
     spin: 0.66,
     randomness: 0.35,
     randomnessPower: 3,
+    rotationSpeed: 0.25,
     insideColor: '#ff6030',
     outsideColor: '#1b3984',
-    rotationSpeed: 0.25,
+
 }
+
+const reparameters = [
+    0.01,
+    50000,
+    5,
+    3,
+    0.66,
+    0.35,
+    3,
+    0.25,
+    '#ff6030',
+    '#1b3984',
+]
+
+let reset = {
+    resetParameters: function () {
+        galaxyControls.__controllers.forEach((item, index) => {
+            if (index !== 10) {
+                galaxyControls.__controllers[index].setValue(reparameters[index])
+            }
+        })
+        generateGalaxy()
+    }
+}
+
 
 let galaxyGeometry = null
 let galaxyMaterial = null
@@ -126,10 +151,10 @@ galaxyControls.add(parameters, 'spin', 0, Math.PI, 0.1).onFinishChange(generateG
 galaxyControls.add(parameters, 'randomness', 0, 0.5, 0.01).onFinishChange(generateGalaxy)
 galaxyControls.add(parameters, 'randomnessPower', 1, 10, 0.001).onFinishChange(generateGalaxy)
 galaxyControls.add(parameters, 'rotationSpeed', 0, 10, 0.001).onFinishChange(generateGalaxy)
-
 galaxyControls.addColor(parameters, 'insideColor').onFinishChange(generateGalaxy)
 galaxyControls.addColor(parameters, 'outsideColor').onFinishChange(generateGalaxy)
 
+galaxyControls.add(reset, 'resetParameters')
 
 generateGalaxy()
 
