@@ -44,7 +44,6 @@ const parameters = {
     rotationSpeed: 0.25,
     insideColor: '#ff6030',
     outsideColor: '#1b3984',
-
 }
 
 const reparameters = [
@@ -63,7 +62,7 @@ const reparameters = [
 let reset = {
     resetParameters: function () {
         galaxyControls.__controllers.forEach((item, index) => {
-            if (index !== 10) {
+            if (index < 10) {
                 galaxyControls.__controllers[index].setValue(reparameters[index])
             }
         })
@@ -71,6 +70,11 @@ let reset = {
     }
 }
 
+let printmyname = {
+    createdBySohail: function () {
+        console.log('D\'Galaxy Generator By Sohail : https://github.com/thesohailjafri/threejs-galaxy')
+    }
+}
 
 let galaxyGeometry = null
 let galaxyMaterial = null
@@ -155,6 +159,7 @@ galaxyControls.addColor(parameters, 'insideColor').onFinishChange(generateGalaxy
 galaxyControls.addColor(parameters, 'outsideColor').onFinishChange(generateGalaxy)
 
 galaxyControls.add(reset, 'resetParameters')
+galaxyControls.add(printmyname, 'createdBySohail')
 
 generateGalaxy()
 
