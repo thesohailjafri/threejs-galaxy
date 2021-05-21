@@ -115,7 +115,7 @@ const generateGalaxy = () => {
 // generateGalaxy end
 
 const galaxyControls = gui.addFolder('Galaxy Controls')
-galaxyControls.open()
+// galaxyControls.open()
 gui.width = 400
 
 galaxyControls.add(parameters, 'size', 0, 0.03, 0.0001).onFinishChange(generateGalaxy)
