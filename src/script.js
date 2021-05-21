@@ -139,7 +139,7 @@ const generateGalaxy = () => {
 }
 // generateGalaxy end
 
-const galaxyControls = gui.addFolder('Galaxy Controls')
+const galaxyControls = gui.addFolder('🌟 Customize Your Galaxy 🌟')
 // galaxyControls.open()
 gui.width = 300
 
