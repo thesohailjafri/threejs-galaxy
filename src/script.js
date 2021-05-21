@@ -44,6 +44,7 @@ const parameters = {
     randomnessPower: 3,
     insideColor: '#ff6030',
     outsideColor: '#1b3984',
+    rotationSpeed: 0.25,
 }
 
 let galaxyGeometry = null
@@ -124,6 +125,8 @@ galaxyControls.add(parameters, 'branches', 2, 8, 1).onFinishChange(generateGalax
 galaxyControls.add(parameters, 'spin', 0, Math.PI, 0.1).onFinishChange(generateGalaxy)
 galaxyControls.add(parameters, 'randomness', 0, 0.5, 0.01).onFinishChange(generateGalaxy)
 galaxyControls.add(parameters, 'randomnessPower', 1, 10, 0.001).onFinishChange(generateGalaxy)
+galaxyControls.add(parameters, 'rotationSpeed', 0, 10, 0.001).onFinishChange(generateGalaxy)
+
 galaxyControls.addColor(parameters, 'insideColor').onFinishChange(generateGalaxy)
 galaxyControls.addColor(parameters, 'outsideColor').onFinishChange(generateGalaxy)
 
@@ -161,7 +164,7 @@ const loop = () => {
     const elapsedTime = clock.getElapsedTime()
 
     //rotatng galaxy
-    galaxy.rotation.y = -elapsedTime * 0.15
+    galaxy.rotation.y = -elapsedTime * parameters.rotationSpeed
 
     //update controls
     controls.update()
@@ -187,7 +190,6 @@ window.addEventListener('resize', () => {
     camera.updateProjectionMatrix()
 
     //update renderer ratio
-
     renderer.setSize(sizes.width, sizes.height)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
