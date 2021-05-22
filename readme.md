@@ -1,4 +1,4 @@
-# 18th of Three.js Journey
+# 18th Step of Three.js Journey
 
 #**Screenshot**
 
