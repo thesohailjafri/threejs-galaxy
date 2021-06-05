@@ -35,7 +35,7 @@ Shapes */
 //Galaxy
 const parameters = {
     size: 0.01,
-    stars: 50000,
+    stars: 80000,
     radius: 5,
     branches: 3,
     spin: 0.66,
@@ -149,7 +149,7 @@ const galaxyControls = gui.addFolder('🌟 Customize Your Galaxy 🌟')
 gui.width = 300
 
 galaxyControls.add(parameters, 'size', 0, 0.03, 0.0001).onFinishChange(generateGalaxy)
-galaxyControls.add(parameters, 'stars', 1, 100000, 1).onFinishChange(generateGalaxy)
+galaxyControls.add(parameters, 'stars', 1, 200000, 1).onFinishChange(generateGalaxy)
 galaxyControls.add(parameters, 'radius', 1, 10, 1).onFinishChange(generateGalaxy)
 galaxyControls.add(parameters, 'branches', 2, 8, 1).onFinishChange(generateGalaxy)
 galaxyControls.add(parameters, 'spin', 0, Math.PI, 0.1).onFinishChange(generateGalaxy)
